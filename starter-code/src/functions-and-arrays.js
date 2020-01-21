@@ -53,24 +53,14 @@ return total;
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
-function averageNumbers (numbersAvg){
-  var average = 0;
-for (var i = 0; i < numbersAvg.length; i++) {
-  average += numbersAvg[i]
+function averageNumbers(array) {
+  if (array.length === 0) {
+    return null;
+  }
+  const total = sumArray(array);
+  const average = total / array.length;
+  return average;
 }
-return average
-}
-
-/* function averageNumbers(array){ 
-
-if (array.length === 0){
-  return null
-}
-  const total = sumArray
-const average = total/array.length
-return average;
-}
-*/
 // Level 2: Array of strings
 const wordsArr = [
   'seat',
@@ -84,7 +74,26 @@ const wordsArr = [
   'fuel',
   'palace'
 ];
-
+function averageWordLength (wordsArr){
+  if (wordsArr.length === 0) {
+    return null;
+  }
+  let total = 0;
+  for (i = 0; i < wordsArr.length; i++) {
+    total += number[i];
+  }
+  
+var avg = total / wordsArr.length;
+}
+/*
+function averageWordLength (wordsArr){
+  let lengthOfWord;
+  for(let num of wordsArr){
+    let total += num
+  }
+  return total
+}
+*/
 // Iteration #5: Unique arrays
 const wordsUnique = [
   'crab',
@@ -99,6 +108,16 @@ const wordsUnique = [
   'simple',
   'bring'
 ];
+function uniquifyArray(a) {
+  function onlyUnique(value, index, self) { 
+      return self.indexOf(value) === index;
+  }
+
+  
+  var unique = a.filter( onlyUnique );
+
+  return unique;
+}
 
 // Iteration #6: Find elements
 const wordsFind = [
@@ -111,6 +130,21 @@ const wordsFind = [
   'truth',
   'disobedience'
 ];
+let a;
+function doesWordExist(arr, a){
+  if(arr.length === 0){
+    return false
+  }
+  
+  for (let i = 0; i < arr.length; i++){
+    if(arr[i]=== a){
+      return true;
+      continue;
+      }
+    return false;
+  }
+
+}
 
 // Iteration #7: Count repetition
 const wordsCount = [
@@ -126,7 +160,21 @@ const wordsCount = [
   'disobedience',
   'matter'
 ];
+function howManyTimes(arr, a){
+  let count = 0;
+  if(arr.length === 0){
+    return 0 
+  }
+  for( i=0; i< arr.length; i++){
+    if(arr[i]=== a){
+      count++;
+    }else{
+      return 0
+    }
+  }
+  
 
+}
 // Iteration #8: Bonus
 
 const matrix = [
