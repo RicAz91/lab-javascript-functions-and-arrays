@@ -74,16 +74,14 @@ const wordsArr = [
   'fuel',
   'palace'
 ];
-function averageWordLength (wordsArr){
-  if (wordsArr.length === 0) {
-    return null;
-  }
-  let total = 0;
-  for (i = 0; i < wordsArr.length; i++) {
-    total += number[i];
-  }
+function averageWordLength (arr){
+  let arrLengthSum = 0
   
-var avg = total / wordsArr.length;
+  if(arr[0] === undefined){ return null;}
+  else{
+    arr.forEach(x => (arrLengthSum += x.length));
+  return arrLengthSum / arr.length;
+  }
 }
 /*
 function averageWordLength (wordsArr){
@@ -130,21 +128,21 @@ const wordsFind = [
   'truth',
   'disobedience'
 ];
-let a;
+
 function doesWordExist(arr, a){
+    
   if(arr.length === 0){
     return false
   }
   
   for (let i = 0; i < arr.length; i++){
-    if(arr[i]=== a){
+    if(a === arr[i]){
       return true;
-      continue;
       }
     return false;
   }
-
 }
+
 
 // Iteration #7: Count repetition
 const wordsCount = [
@@ -160,21 +158,19 @@ const wordsCount = [
   'disobedience',
   'matter'
 ];
-function howManyTimes(arr, a){
+
+function howManyTimes(arr, value){
   let count = 0;
   if(arr.length === 0){
     return 0 
+  } else {
+    arr.forEach((v) => (v === value && count++));
+    
   }
-  for( i=0; i< arr.length; i++){
-    if(arr[i]=== a){
-      count++;
-    }else{
-      return 0
-    }
-  }
-  
+  return count
 
 }
+
 // Iteration #8: Bonus
 
 const matrix = [
